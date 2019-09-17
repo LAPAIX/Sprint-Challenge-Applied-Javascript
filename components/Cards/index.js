@@ -44,6 +44,7 @@ function createCard(newCard) {
 
   //adding the content
   //javascript headlines
+
   newCard.javascript.forEach(element => {
     headLine.textContent = element.headline;
     span.textContent = element.authorName;
@@ -71,10 +72,6 @@ function createCard(newCard) {
       headLine.textContent = element.headline;
       span.textContent = element.authorName;
       img.src = element.authorPhoto;
-    });
-
-    span.addEventListener("click", () => {
-      article.classList.toggle("article-open");
     });
   });
 
