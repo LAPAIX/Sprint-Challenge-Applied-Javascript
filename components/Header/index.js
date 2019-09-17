@@ -21,7 +21,6 @@ function Header() {
   //structuring
   header.appendChild(date);
   header.appendChild(h1);
-  header.appendChild(h1);
   header.appendChild(temp);
 
   //adding the style

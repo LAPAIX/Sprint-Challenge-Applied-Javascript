@@ -43,8 +43,40 @@ function createCard(newCard) {
   imgContainer.classList.add("img-container");
 
   //adding the content
+  //javascript headlines
+  newCard.javascript.forEach(element => {
+    headLine.textContent = element.headline;
+    span.textContent = element.authorName;
+    img.src = element.authorPhoto;
+  });
 
-  headLine.textContent = newCard;
+  newCard.bootstrap.forEach(element => {
+    headLine.textContent = element.headline;
+    span.textContent = element.authorName;
+    img.src = element.authorPhoto;
+  });
+
+  newCard.technology.forEach(element => {
+    headLine.textContent = element.headline;
+    span.textContent = element.authorName;
+    img.src = element.authorPhoto;
+  });
+
+  newCard.jquery.forEach(element => {
+    headLine.textContent = element.headline;
+    span.textContent = element.authorName;
+    img.src = element.authorPhoto;
+
+    newCard.node.forEach(element => {
+      headLine.textContent = element.headline;
+      span.textContent = element.authorName;
+      img.src = element.authorPhoto;
+    });
+
+    span.addEventListener("click", () => {
+      article.classList.toggle("article-open");
+    });
+  });
 
   return card;
 }
@@ -53,6 +85,7 @@ axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
     console.log(response.data.articles);
+    cardContainer.appendChild(createCard(response.data.articles));
   })
 
   .catch(error => {
